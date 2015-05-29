@@ -1,0 +1,1 @@
+browserify -t [reactify --es6] app.jsx -o app.js
