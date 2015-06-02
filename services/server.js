@@ -1,5 +1,5 @@
 var restify = require('restify');
-var React = require('React');
+var React = require('react');
 var myservice = require('./service.js');
 var state = {};
 var app = React.createFactory(require('../app/app.js'));
