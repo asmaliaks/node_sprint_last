@@ -24,6 +24,9 @@ server.get('/', function (req, res, next) {
 	var content = React.renderToString(new app(state));
 	var body = '<!DOCTYPE html>\
 				<html lang="">\
+				<head>\
+				<link rel="stylesheet" type="text/css" href="css/main.css">\
+				</head>\
 					<body>\
 						<div id="app">' + content + '</div>\
 						<script>var APP_PROPS = {name: "' + state.name+ '"};</script>\

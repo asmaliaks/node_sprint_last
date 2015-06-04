@@ -6,9 +6,11 @@
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1",
     "gulp-less": "^3.0.3",
+    "gulp-react": "^3.0.1",
     "gulp-rename": "^1.2.2",
     "jasmine-node": "^1.14.5",
     "mongodb": "^2.0.31",
+    "reactify": "^1.1.1",
     "request": "^2.55.0",
     "restify": "^3.0.2",
     "uniq": "^1.0.1",
@@ -23,5 +25,10 @@
     "url": ""
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "material-ui": "^0.7.0",
+    "react": "^0.13.3",
+    "react-tap-event-plugin": "^0.1.7"
+  }
 }
