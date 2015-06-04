@@ -35,8 +35,25 @@
 @font-face {
   font-family: 'IcoMoon-Free';
   src: url('../fonts/IcoMoon-Free.ttf') format('truetype');
+  src: url('../fonts/IcoMoon-Free.eot') format('embedded-opentype'),
+  url('../fonts/IcoMoon-Free.woff2') format('woff2'),
+  url('../fonts/IcoMoon-Free.woff') format('woff'),
+  url('../fonts/IcoMoon-Free.ttf') format('truetype'),
+  url('../fonts/IcoMoon-Free.svg') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'robotoregular';
+  src: url('../fonts/roboto-regular-webfont.eot');
+  src: url('../fonts/roboto-regular-webfont.eot') format('embedded-opentype'),
+  url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-regular-webfont.woff') format('woff'),
+  url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 .icon {
@@ -79,12 +96,44 @@ body{
 .mui-text-field .mui-text-field-input{
   color: #fff;
 }
+.h_enter,
 .registration-field .mui-flat-button{
   text-transform: none;
   width: auto;
+  min-width: auto;
   background: none;
   color: #fff;
+
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  outline: medium none;
+  position: relative;
+  overflow: visible;
+  line-height: normal;
 }
-.registration-field .mui-flat-button:hover{
-  text-decoration: underline;
+.h_enter:after,
+.registration-field .mui-flat-button:after {
+  background: #fff;
+  content: "";
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.h_enter:hover:after,
+.registration-field .mui-flat-button:hover:after,
+.registration-field .mui-flat-button:focus:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#app{
+  font-family: 'robotoregular', sans-serif;
 }
