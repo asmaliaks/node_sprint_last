@@ -2718,13 +2718,13 @@ body {
 .mui-text-field .mui-text-field-input {
   color: #fff;
 }
-.h_enter,
-.registration-field .mui-flat-button {
+.h_enter {
   text-transform: none;
   width: auto;
   min-width: auto;
   background: none;
   color: #fff;
+  font-size: 16px;
   display: inline-block;
   font-weight: 400;
   letter-spacing: 1px;
@@ -2734,8 +2734,7 @@ body {
   overflow: visible;
   line-height: normal;
 }
-.h_enter:after,
-.registration-field .mui-flat-button:after {
+.h_enter:after {
   background: #fff;
   content: "";
   height: 1px;
@@ -2749,8 +2748,7 @@ body {
   box-sizing: border-box;
 }
 .h_enter:hover:after,
-.registration-field .mui-flat-button:hover:after,
-.registration-field .mui-flat-button:focus:after {
+.h_enter:focus:after {
   opacity: 1;
   transform: translateY(0px);
 }

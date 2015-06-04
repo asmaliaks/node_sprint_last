@@ -1,7 +1,6 @@
 var React = require('react'),
   mui = require('material-ui'),
-  TextField = mui.TextField,
-  FlatButton = mui.FlatButton;
+  TextField = mui.TextField;
 
 var Header = React.createClass({displayName: "Header",
 
@@ -11,10 +10,9 @@ var Header = React.createClass({displayName: "Header",
       React.createElement("div", {className: "header clearfix"}, 
 
         React.createElement("div", {className: "registration-field align-right"}, 
-          React.createElement(FlatButton, {label: "Login"}), 
-          React.createElement("span", {className: "h_enter"}, "Login"), 
-          React.createElement("span", {className: "separator"}), 
-          React.createElement(FlatButton, {label: "Sign up"})
+            React.createElement("span", {className: "h_enter"}, "Login"), 
+             React.createElement("span", {className: "separator"}), 
+             React.createElement("span", {className: "h_enter"}, "Sign up")
         ), 
 
         React.createElement("h1", {className: "logo_title"}, "Potato Search"), 

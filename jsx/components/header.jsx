@@ -1,7 +1,6 @@
 var React = require('react'),
   mui = require('material-ui'),
-  TextField = mui.TextField,
-  FlatButton = mui.FlatButton;
+  TextField = mui.TextField;
 
 var Header = React.createClass({
 
@@ -10,11 +9,10 @@ var Header = React.createClass({
 
       <div className="header clearfix">
 
-
-          <span  className="h_enter">Login</span>
-          <span className="separator"></span>
-          <span  className="h_enter">Sign up</span>
-
+        <div className="registration-field align-right">
+            <span  className="h_enter">Login</span>
+             <span className="separator"></span>
+             <span  className="h_enter">Sign up</span>
         </div>
 
         <h1 className="logo_title">Potato Search</h1>
