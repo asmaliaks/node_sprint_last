@@ -2786,3 +2786,26 @@ body {
 .search-field {
   margin-top: 150px;
 }
+@media screen and (min-width: 768px) {
+  .mui-text-field {
+    width: 340px;
+  }
+  .mui-text-field .mui-text-field-input,
+  .mui-text-field .mui-text-field-textarea {
+    font-size: 26px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .mui-text-field {
+    width: 280px;
+  }
+  .mui-text-field .mui-text-field-input,
+  .mui-text-field .mui-text-field-textarea {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 320px) {
+  .mui-text-field {
+    width: 170px;
+  }
+}
