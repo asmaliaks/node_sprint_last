@@ -69,13 +69,13 @@ gulp.task('watch', function () {
     // Watch the jsx components_jsx folder for changes
     gulp.watch('./jsx/components/*.jsx', function () {
         // Run the css task
-        gulp.run('react1');
+        gulp.run('react1','app');
     });
 
     // Watch the jsx app for changes
     gulp.watch('./jsx/*.jsx', function () {
         // Run the js task
-        gulp.run('react2');
+        gulp.run('react2','app');
     });
 
     // Watch the app.js app for changes
