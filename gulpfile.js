@@ -5,18 +5,11 @@ var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var rename = require('gulp-rename');
+var react = require('gulp-react');
 
 gulp.task('default', function () {
 
 });
-
-gulp.task('material-theme-less', function () {
-	return gulp.src('./test/material-ui/*.less')
-		.pipe(less({
-		paths: [path.join(__dirname, 'less', 'includes')]
-	}))
-		.pipe(gulp.dest('./test/material-ui/'));
-});	
 
 // Basic usage 
 gulp.task('scripts', function() {
@@ -27,10 +20,8 @@ gulp.task('scripts', function() {
         // Start piping stream to tasks!
         .pipe(gulp.dest('./test/browserify/'));
 });
-
-
  
-gulp.task('react', function () {
+gulp.task('reactify', function () {
     var bundler = browserify({
         entries: ['./test/react/app.jsx'], // Only need initial file, browserify finds the deps
         transform: [reactify], // We want to convert JSX to normal javascript
@@ -50,5 +41,58 @@ gulp.task('app', function () {
         .pipe(gulp.dest('./public/'));   
 });
 
-gulp.task('default', []);
+gulp.task('react1', function () {
+    return gulp.src('./jsx/components/*.jsx')
+        .pipe(react())
+        .pipe(gulp.dest('./app/components/'));
+});
+
+gulp.task('react2', function () {
+    return gulp.src('./jsx/*.jsx')
+        .pipe(react())
+        .pipe(gulp.dest('./app/'));
+});
+
+gulp.task('less', function () {
+    return gulp.src('./app/less/main.less')
+        .pipe(less({
+        paths: [path.join(__dirname, 'less', 'includes')]
+    }))
+        .pipe(gulp.dest('./public/css/'));
+}); 
+
+gulp.task('watch', function () {
+
+    // Run both tasks on first run
+    gulp.run('react1', 'react2','app','less');
+
+    // Watch the jsx components_jsx folder for changes
+    gulp.watch('./jsx/components/*.jsx', function () {
+        // Run the css task
+        gulp.run('react1');
+    });
+
+    // Watch the jsx app for changes
+    gulp.watch('./jsx/*.jsx', function () {
+        // Run the js task
+        gulp.run('react2');
+    });
+
+    // Watch the app.js app for changes
+    gulp.watch('./app/app.js', function () {
+        // Run the app task
+        gulp.run('app');
+    });  
+
+    // Watch the main.less app for changes
+    gulp.watch('./app/less/main.less', function () {
+        // Run the app task
+        gulp.run('less');
+    }); 
+
+});
+
+
+
+gulp.task('default', ['watch']);
 
