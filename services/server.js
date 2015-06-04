@@ -7,7 +7,7 @@ var server = restify.createServer();
 
 // Rest service
 server.get('/test', function (req, res, next) {
-	res.send(200, JSON.stringify(myservice.test()));
+	res.send(200, JSON(myservice.test()));
 	next();
 });
 
