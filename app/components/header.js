@@ -15,7 +15,6 @@ var Header = React.createClass({displayName: "Header",
              React.createElement("span", {className: "h_enter"}, "Sign up")
         ), 
 
-        React.createElement("h1", {className: "logo_title"}, "Potato Search"), 
 
         React.createElement("div", {className: "search-field"}, 
           React.createElement(TextField, {hintText: "Search"}), 

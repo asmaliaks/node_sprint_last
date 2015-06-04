@@ -6,7 +6,6 @@ var Footer = React.createClass({
     return (
 
       <div className="footer">
-        <h1>Potato Footer</h1>
       </div>
     );
   }

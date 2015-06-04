@@ -15,7 +15,6 @@ var Header = React.createClass({
              <span  className="h_enter">Sign up</span>
         </div>
 
-        <h1 className="logo_title">Potato Search</h1>
 
         <div className="search-field">
           <TextField hintText="Search" />

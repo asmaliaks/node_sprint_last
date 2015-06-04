@@ -35,8 +35,8 @@ var Footer = React.createClass({displayName: "Footer",
   render: function() {
     return (
 
-      React.createElement("div", {className: "footer"}, 
-        React.createElement("h1", null, "Potato Footer")
+      React.createElement("div", {className: "footer"}
+
       )
     );
   }
@@ -62,7 +62,6 @@ var Header = React.createClass({displayName: "Header",
              React.createElement("span", {className: "h_enter"}, "Sign up")
         ), 
 
-        React.createElement("h1", {className: "logo_title"}, "Potato Search"), 
 
         React.createElement("div", {className: "search-field"}, 
           React.createElement(TextField, {hintText: "Search"}), 
@@ -109,8 +108,10 @@ var Page = React.createClass({displayName: "Page",
     return (
       React.createElement("div", {className: "example-page"}, 
 
+        React.createElement("div", {className: "page_inner"}, 
         React.createElement(Header, null), 
-        React.createElement(Main, null), 
+        React.createElement(Main, null)
+        ), 
         React.createElement(Footer, null)
 
       )

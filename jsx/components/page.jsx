@@ -12,8 +12,10 @@ var Page = React.createClass({
     return (
       <div className="example-page">
 
+        <div className="page_inner">
         <Header />
         <Main />
+        </div>
         <Footer />
 
       </div>

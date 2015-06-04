@@ -2639,7 +2639,6 @@ hr {
 .example-page {
   text-align: center;
   padding-top: 10px;
-  max-width: 1000px;
   margin: auto;
 }
 .align-right {
@@ -2706,10 +2705,30 @@ hr {
 }
 .mui-text-field {
   padding-right: 35px;
+  width: 450px;
 }
 body {
   background-color: #00BDD6;
   color: #fff;
+  font-family: 'robotoregular', sans-serif;
+  height: 100%;
+}
+.example-page,
+#app {
+  height: 100%;
+}
+.header {
+  max-width: 1000px;
+  margin: auto;
+}
+.main {
+  max-width: 1000px;
+  margin: auto;
+  padding-bottom: 60px;
+}
+.page_inner {
+  height: auto;
+  min-height: 100%;
 }
 .header h1 {
   color: #fff;
@@ -2725,6 +2744,8 @@ body {
   background: none;
   color: #fff;
   font-size: 16px;
+  cursor: pointer;
+  margin: 0 18px;
   display: inline-block;
   font-weight: 400;
   letter-spacing: 1px;
@@ -2752,6 +2773,16 @@ body {
   opacity: 1;
   transform: translateY(0px);
 }
-#app {
-  font-family: 'robotoregular', sans-serif;
+.mui-text-field .mui-text-field-input,
+.mui-text-field .mui-text-field-textarea {
+  font-size: 26px;
+}
+.footer {
+  background: #0097A7;
+  height: 60px;
+  width: 100%;
+  margin-top: -60px;
+}
+.search-field {
+  margin-top: 150px;
 }

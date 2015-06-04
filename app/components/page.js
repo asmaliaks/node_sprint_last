@@ -12,8 +12,10 @@ var Page = React.createClass({displayName: "Page",
     return (
       React.createElement("div", {className: "example-page"}, 
 
+        React.createElement("div", {className: "page_inner"}, 
         React.createElement(Header, null), 
-        React.createElement(Main, null), 
+        React.createElement(Main, null)
+        ), 
         React.createElement(Footer, null)
 
       )
