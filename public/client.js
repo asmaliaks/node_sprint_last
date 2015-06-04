@@ -36,7 +36,6 @@ var Footer = React.createClass({displayName: "Footer",
     return (
 
       React.createElement("div", {className: "footer"}
-
       )
     );
   }
@@ -84,8 +83,8 @@ var Main = React.createClass({displayName: "Main",
   render: function() {
     return (
 
-      React.createElement("div", {className: "main"}, 
-        React.createElement("h1", null, "Potato Main")
+      React.createElement("div", {className: "main"}
+
       )
     );
   }

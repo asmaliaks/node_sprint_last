@@ -6,7 +6,7 @@ var Main = React.createClass({
     return (
 
       <div className="main">
-        <h1>Potato Main</h1>
+
       </div>
     );
   }
