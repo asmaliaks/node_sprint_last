@@ -12,6 +12,8 @@ var Header = React.createClass({
 
         <div className="registration-field align-right">
           <FlatButton label="Login" />
+          <span  className="h_enter">Login</span>
+          <span className="separator"></span>
           <span className="separator"></span>
           <FlatButton label="Sign up" />
         </div>
