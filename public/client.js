@@ -59,7 +59,9 @@ var Header = React.createClass({displayName: "Header",
 
         React.createElement("div", {className: "registration-field align-right"}, 
           React.createElement(FlatButton, {label: "Login"}), 
+          React.createElement("span", {className: "h_enter"}, "Login"), 
           React.createElement("span", {className: "separator"}), 
+          React.createElement("span", null, "fsfdsdf"), 
           React.createElement(FlatButton, {label: "Sign up"})
         ), 
 

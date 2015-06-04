@@ -10,12 +10,11 @@ var Header = React.createClass({
 
       <div className="header clearfix">
 
-        <div className="registration-field align-right">
-          <FlatButton label="Login" />
+
           <span  className="h_enter">Login</span>
           <span className="separator"></span>
-          <span className="separator"></span>
-          <FlatButton label="Sign up" />
+          <span  className="h_enter">Sign up</span>
+
         </div>
 
         <h1 className="logo_title">Potato Search</h1>

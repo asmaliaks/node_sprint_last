@@ -14,7 +14,6 @@ var Header = React.createClass({displayName: "Header",
           React.createElement(FlatButton, {label: "Login"}), 
           React.createElement("span", {className: "h_enter"}, "Login"), 
           React.createElement("span", {className: "separator"}), 
-          React.createElement("span", {className: "separator"}), 
           React.createElement(FlatButton, {label: "Sign up"})
         ), 
 
