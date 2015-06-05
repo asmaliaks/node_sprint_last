@@ -61,6 +61,15 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./public/css/'));
 }); 
 
+gulp.task('state', function () {
+    return browserify('./test/state/app.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('app-client.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./test/state/'));   
+});
+
 gulp.task('watch', function () {
 
     // Run both tasks on first run
