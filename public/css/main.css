@@ -2636,6 +2636,7 @@ hr {
 .mui-transition-slide-in.mui-is-down .mui-transition-slide-in-leave-active {
   transform: translate3d(0, 100%, 0);
 }
+/*@accent-1-color: @orange-A200;*/
 .example-page {
   text-align: center;
   padding-top: 22px;
@@ -2678,6 +2679,16 @@ hr {
   src: url('../fonts/roboto-regular-webfont.eot') format('embedded-opentype'), url('../fonts/roboto-regular-webfont.woff2') format('woff2'), url('../fonts/roboto-regular-webfont.woff') format('woff'), url('../fonts/roboto-regular-webfont.ttf') format('truetype'), url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+input::-moz-placeholder {
+  color: #ffffff;
+}
+/* Firefox 19+ */
+input:-ms-input-placeholder {
+  color: #ffffff;
 }
 .icon {
   font-family: 'IcoMoon-Free';
