@@ -94,7 +94,7 @@ gulp.task('watch', function () {
     });  
 
     // Watch the main.less app for changes
-    gulp.watch('./app/less/main.less', function () {
+    gulp.watch('./less/main.less', function () {
         // Run the app task
         gulp.run('less');
     }); 
