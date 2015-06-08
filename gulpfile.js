@@ -54,7 +54,7 @@ gulp.task('react2', function () {
 });
 
 gulp.task('less', function () {
-    return gulp.src('./app/less/main.less')
+    return gulp.src('./less/main.less')
         .pipe(less({
         paths: [path.join(__dirname, 'less', 'includes')]
     }))
