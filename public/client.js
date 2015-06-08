@@ -13,7 +13,6 @@ React.render(app(window.APP_PROPS), document.getElementById('app'));
 },{"./app.js":2,"react":249}],2:[function(require,module,exports){
 var React = require('react');
 var Page = require('./components/page.js');
-
 // App
 var app = React.createClass({displayName: "app",
     render: function () {

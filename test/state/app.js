@@ -1,11 +1,4 @@
-var React = require('react');
-
-// About view
-var About = React.createClass({displayName: "About", 
-	render: function () {
-    	return React.createElement("main", null,	"About");
-  	}
-});
+ var React = require('react');
 
 // Header component
 var Header = React.createClass({displayName: "Header",
@@ -38,6 +31,12 @@ var Home = React.createClass({displayName: "Home",
   }
 });
 
+// About view
+var About = React.createClass({displayName: "About", 
+	render: function () {
+    	return React.createElement("main", null,	"About");
+  	}
+});
 
 // Application
 var App = React.createClass({displayName: "App",
