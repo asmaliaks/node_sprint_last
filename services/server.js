@@ -25,6 +25,7 @@ server.get('/', function (req, res, next) {
 	var body = '<!DOCTYPE html>\
 				<html lang="">\
 				<head>\
+				<meta content="width=device-width" name="viewport">\
 				<link rel="stylesheet" type="text/css" href="css/main.css">\
 				</head>\
 					<body>\
