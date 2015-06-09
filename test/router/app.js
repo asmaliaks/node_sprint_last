@@ -72,13 +72,13 @@ var App = React.createClass({displayName: "App",
 		});	
 		
 		// Get initail view
-		if (router.hash) { // Browser hash has higher priority over server
-			initialView = router.hash;
+		if (router.path) { // Browser hash has higher priority over server
+			initialView = router.path;
 		} else 	if (this.props.currentView) { // If defined by on server or starting parameters
 			initialView = this.props.currentView;
 		}
 		
-		return { currentView: initialView };
+		return { currentView: initialView};
 		
     },
 	
