@@ -53,4 +53,4 @@ server.get('/.*', restify.serveStatic({
 server.listen(8080, function () {
 	console.log('%s listening at %s', server.name, server.url);
 });
-var server = restify.createServer();
+// var server = restify.createServer();

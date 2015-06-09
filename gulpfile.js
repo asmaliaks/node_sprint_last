@@ -54,7 +54,7 @@ gulp.task('react2', function () {
 });
 
 gulp.task('less', function () {
-    return gulp.src('./app/less/main.less')
+    return gulp.src('./less/main.less')
         .pipe(less({
         paths: [path.join(__dirname, 'less', 'includes')]
     }))
@@ -94,7 +94,7 @@ gulp.task('watch', function () {
     });  
 
     // Watch the main.less app for changes
-    gulp.watch('./app/less/main.less', function () {
+    gulp.watch('./less/main.less', function () {
         // Run the app task
         gulp.run('less');
     }); 
