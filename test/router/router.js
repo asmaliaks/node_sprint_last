@@ -1,67 +1,91 @@
-// TODO: add support of HTML5 History API
-require('url');
+var URL = require('url');
 require('querystring');
 var Router = function () {
-	var self = this;
-
-	if (typeof window != 'undefined') {
-		window.addEventListener('hashchange', function () {
-			self.onHashChange();
-		});
-	}
-
+	var self = this;	
+	
+	// Detect environment
+	this.isBrowser = typeof window !== 'undefined' &&  window.document && window.document.createElement;
+	this.hasHistory = this.isBrowser && window.history && 'pushState' in window.history;
+	
+	// Init variables
 	this.listeners = {};
-	this.hash = this.getHash();
+	this.path = this.getPath();
+	
+	// Add listeners
+	if (this.isBrowser && !this.hasHistory) {
+		window.addEventListener('hashchange', function () {
+			console.log('hashchange', event);
+			self.onPathChange();
+		});		
+		
+	} else if (this.hasHistory) {
+		window.addEventListener('popstate', function(event) {
+			console.log('popstate', event);
+		    if (event.state) {
+		        var path = event.state.path; 					
+				self.onPathChange(path);			
+		    }
+		}, false);		
+		window.history.pushState({path: this.path}, '', '?path=' + this.path);
+	}	
 };
+
+
 
 Router.prototype.on = function (key, fn) {
 	this.listeners[key] = fn;
 };
 
-Router.prototype.getHash = function () {
-	var hash;
+Router.prototype.getPath = function () {
+	var path, hash, url;
 
-	if (typeof window != 'undefined' && window.location) { // Asume we are in browser
-		hash = window.location.hash;
-	} else {
-		return '';
-	}
+	if (this.isBrowser && this.hasHistory) {
+		url = window.location.toString();
+		return this.getPathFromUrl(url);
+	} 
 	
-	// Remove #
-	if (hash && hash.substring(0, 1) == '#') {
-		hash = hash.substring(1);
-	}
-
-	return hash;
+	if (this.isBrowser) {
+		hash = window.location.hash;
+		if (hash && hash.substring(0, 1) == '#') {
+			hash = hash.substring(1);
+		}	
+		return hash;
+	}		
+	return '';
 };
 
-Router.prototype.onHashChange = function (newHash) {
-	newHash = newHash || this.getHash();
+Router.prototype.onPathChange = function (newPath) {
+	newPath = newPath || this.getPath();
+	console.log('path change', newPath);
 		
 	// Call listener
-	if (typeof this.listeners[newHash] == 'function') {
-		this.listeners[newHash](newHash);
+	if (typeof this.listeners[newPath] == 'function') {
+		this.listeners[newPath](newPath);
 	}
 };
 
-Router.prototype.navigate = function (newHash) {
-	if (typeof window != 'undefined' && window.location) {
-		window.location.hash = '#' + newHash;
-	} else {
-		this.hash = newHash;
-		this.onHashChange(newHash);
+Router.prototype.navigate = function (newPath) {
+	if (this.isBrowser && !this.hasHistory) {
+		window.location.hash = '#' + newPath;
+	} else if (this.hasHistory) {
+		this.path = newPath;
+		window.history.pushState({path: newPath}, '', '?path=' + newPath);
+		this.onPathChange(newPath);		
 	}
 };
 
-Router.prototype.serverRoute = function (req) {
-	var url = require('url');
-	var urlParts = url.parse(req.url, true);
+Router.prototype.getPathFromUrl = function (url) {
+	var urlParts = URL.parse(url, true);
 	var query = urlParts.query;
 	if (query) {
 		return query.path || '';
 	} else {
 		return '';
-	}
-}
+	}	
+};
+
+Router.prototype.serverRoute = function (req) {
+	return this.getPathFromUrl(req.url);
+};
 
 module.exports = Router;

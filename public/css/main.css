@@ -445,13 +445,13 @@ body {
 }
 html {
   -webkit-font-smoothing: antialiased;
-  color: rgba(0, 0, 0, 0.87);
+  color: #ffffff;
   font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
 }
 hr {
   border: none;
-  border-bottom: solid 1px #e0e0e0;
+  border-bottom: solid 2px #ffffff;
 }
 .mui-text-full-black {
   color: #000000;
@@ -820,7 +820,7 @@ hr {
   position: absolute;
 }
 .mui-checkbox .mui-checkbox-icon .mui-checkbox-box * {
-  fill: rgba(0, 0, 0, 0.87);
+  fill: #ffffff;
   transition: all 2s cubic-bezier(0.23, 1, 0.32, 1) 200ms;
 }
 .mui-checkbox.mui-is-switched .mui-checkbox-icon .mui-checkbox-check {
@@ -838,7 +838,7 @@ hr {
 }
 .mui-checkbox.mui-is-disabled .mui-checkbox-icon .mui-checkbox-check *,
 .mui-checkbox.mui-is-disabled .mui-checkbox-icon .mui-checkbox-box * {
-  fill: rgba(0, 0, 0, 0.3);
+  fill: rgba(255, 255, 255, 0.3);
 }
 .mui-checkbox.mui-is-required .mui-checkbox-icon .mui-checkbox-box * {
   fill: #00bcd4;
@@ -849,7 +849,7 @@ hr {
 .mui-date-picker-calendar .mui-date-picker-calendar-week-title {
   *zoom: 1;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 12px;
   padding: 0 14px;
 }
@@ -1004,7 +1004,7 @@ hr {
 }
 .mui-date-picker-dialog {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.87);
+  color: #ffffff;
 }
 .mui-date-picker-dialog .mui-date-picker-dialog-window.mui-dialog-window-contents {
   width: 280px;
@@ -1039,7 +1039,7 @@ hr {
   transform: scale(1);
 }
 .mui-date-picker-day-button.mui-is-disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 .mui-date-picker-day-button.mui-is-current-date {
   color: #00bcd4;
@@ -1180,7 +1180,7 @@ hr {
   fill: rgba(0, 0, 0, 0.26);
 }
 .mui-drop-down-menu .mui-menu-control .mui-menu-control-underline {
-  border-top: solid 1px #e0e0e0;
+  border-top: solid 1px #ffffff;
   margin: 0 24px;
 }
 .mui-drop-down-menu .mui-menu .mui-menu-item {
@@ -1270,12 +1270,13 @@ hr {
   letter-spacing: 0;
   text-transform: uppercase;
   font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
   border-radius: 2px;
   user-select: none;
   position: relative;
   overflow: hidden;
   background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.87);
+  color: #ffffff;
   line-height: 36px;
   min-width: 88px;
   padding: 0;
@@ -1297,7 +1298,7 @@ hr {
   background-color: #e6e6e6;
 }
 .mui-flat-button.mui-is-disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 .mui-flat-button.mui-is-disabled:hover {
   background-color: inherit;
@@ -1351,7 +1352,7 @@ hr {
   background-color: #e6e6e6;
 }
 .mui-floating-action-button .mui-floating-action-button-container.mui-is-disabled .mui-floating-action-button-icon {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 .mui-floating-action-button .mui-floating-action-button-container.mui-is-disabled:hover {
   background-color: #e6e6e6;
@@ -1429,8 +1430,8 @@ hr {
   margin-top: 52px;
 }
 .mui-icon-button.mui-is-disabled * {
-  color: rgba(191, 191, 191, 0.87);
-  fill: rgba(191, 191, 191, 0.87);
+  color: #ffffff;
+  fill: #ffffff;
 }
 .mui-dark-theme .mui-touch-ripple .mui-ripple-circle-inner {
   background-color: rgba(255, 255, 255, 0.3);
@@ -1471,7 +1472,7 @@ hr {
 .mui-input input[type='email'],
 .mui-input textarea[type='email'] {
   display: block;
-  width: 320px;
+  width: 375px;
 }
 .mui-input input:focus,
 .mui-input textarea:focus,
@@ -1564,13 +1565,13 @@ hr {
   opacity: 0.25;
   height: 19px;
   top: -3px;
-  width: 160px;
+  width: 187.5px;
   z-index: -1;
 }
 .mui-input .mui-input-bar {
   position: relative;
   display: block;
-  width: 320px;
+  width: 375px;
 }
 .mui-input .mui-input-bar::before,
 .mui-input .mui-input-bar::after {
@@ -1672,7 +1673,7 @@ hr {
 .mui-left-nav .mui-left-nav-menu .mui-menu a.mui-menu-item {
   display: block;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.87);
+  color: #ffffff;
 }
 .mui-left-nav.mui-closed .mui-left-nav-menu {
   transform: translate3d(-266px, 0, 0);
@@ -1709,7 +1710,7 @@ hr {
   position: relative;
 }
 .mui-menu .mui-nested-menu-item.mui-is-disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
   cursor: default;
 }
 .mui-menu .mui-nested-menu-item.mui-open > .mui-menu {
@@ -1768,7 +1769,7 @@ hr {
   color: #ff4081;
 }
 .mui-menu-item.mui-is-disabled {
-  color: rgba(0, 0, 0, 0.3) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
   cursor: default;
 }
 .mui-overlay {
@@ -1854,7 +1855,7 @@ hr {
   transform: scale(1);
 }
 .mui-radio-button .mui-radio-button-icon .mui-radio-button-target * {
-  fill: rgba(0, 0, 0, 0.87);
+  fill: #ffffff;
   transition: all 2s cubic-bezier(0.23, 1, 0.32, 1) 200ms;
 }
 .mui-radio-button.mui-is-switched .mui-radio-button-icon .mui-radio-button-fill {
@@ -1871,7 +1872,7 @@ hr {
 }
 .mui-radio-button.mui-is-disabled .mui-radio-button-icon .mui-radio-button-fill *,
 .mui-radio-button.mui-is-disabled .mui-radio-button-icon .mui-radio-button-target * {
-  fill: rgba(0, 0, 0, 0.3);
+  fill: rgba(255, 255, 255, 0.3);
 }
 .mui-radio-button.mui-is-required .mui-radio-button-icon .mui-radio-button-target * {
   fill: #00bcd4;
@@ -1901,7 +1902,7 @@ hr {
   background-color: #e6e6e6;
 }
 .mui-raised-button .mui-raised-button-container.mui-is-disabled .mui-raised-button-label {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 .mui-raised-button .mui-raised-button-container.mui-is-disabled:hover {
   background-color: #e6e6e6;
@@ -1921,11 +1922,12 @@ hr {
   letter-spacing: 0;
   text-transform: uppercase;
   font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
   margin: 0;
   padding: 0 16px;
   user-select: none;
   line-height: 36px;
-  color: rgba(0, 0, 0, 0.87);
+  color: #ffffff;
 }
 .mui-raised-button:hover .mui-raised-button-container {
   background-color: #e6e6e6;
@@ -2191,7 +2193,7 @@ hr {
   height: 56px;
   line-height: 48px;
   color: #00bcd4;
-  border-top: solid 1px #e0e0e0;
+  border-top: solid 1px #ffffff;
   padding-top: 8px;
   margin-top: 8px;
 }
@@ -2209,7 +2211,7 @@ hr {
   user-select: none;
 }
 .mui-svg-icon * {
-  fill: rgba(0, 0, 0, 0.87);
+  fill: #ffffff;
 }
 .mui-table {
   padding: 0 24px;
@@ -2274,10 +2276,10 @@ hr {
   text-align: initial;
 }
 .mui-text-field {
-  font-size: 16px;
-  line-height: 24px;
-  width: 256px;
-  height: 48px;
+  font-size: 36px;
+  line-height: 1.2;
+  width: 800px;
+  height: 60px;
   display: inline-block;
   position: relative;
   transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -2286,7 +2288,7 @@ hr {
 .mui-text-field .mui-text-field-floating-label {
   position: absolute;
   line-height: 48px;
-  color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
   opacity: 1;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
@@ -2306,7 +2308,7 @@ hr {
   border: none;
   outline: none;
   background-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0.87);
+  color: #ffffff;
 }
 .mui-text-field .mui-text-field-textarea {
   margin-top: 12px;
@@ -2332,7 +2334,7 @@ hr {
   opacity: 0;
 }
 .mui-text-field.mui-is-disabled .mui-text-field-input {
-  color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
 }
 .mui-text-field.mui-is-disabled .mui-text-field-underline {
   border: none;
@@ -2343,7 +2345,7 @@ hr {
   content: '..............................................................................................................................................................................................................................................................................................................................................................';
   position: absolute;
   top: 23px;
-  color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
 }
 .mui-text-field.mui-is-focused .mui-text-field-focus-underline {
   transform: scaleX(1);
@@ -2368,17 +2370,17 @@ hr {
   transform: scale(0.75) translate3d(0, -18px, 0);
 }
 .mui-text-field.mui-has-floating-labels.mui-has-value .mui-text-field-floating-label {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 .mui-text-field.mui-has-floating-labels.mui-is-disabled .mui-text-field-hint {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 .mui-text-field.mui-has-floating-labels.mui-is-focused .mui-text-field-hint {
   opacity: 1;
 }
 .mui-text-field.mui-has-floating-labels.mui-is-focused .mui-text-field-floating-label {
   transform: scale(0.75) translate3d(0, -18px, 0);
-  color: #00bcd4;
+  color: #ffffff;
 }
 .mui-text-field.mui-has-floating-labels.mui-is-focused.mui-has-error .mui-text-field-floating-label {
   color: #f44336;
@@ -2679,16 +2681,6 @@ hr {
   font-weight: normal;
   font-style: normal;
 }
-input::-webkit-input-placeholder {
-  color: #ffffff;
-}
-input::-moz-placeholder {
-  color: #ffffff;
-}
-/* Firefox 19+ */
-input:-ms-input-placeholder {
-  color: #ffffff;
-}
 .icon {
   font-family: 'IcoMoon-Free';
   speak: none;
@@ -2710,16 +2702,14 @@ input:-ms-input-placeholder {
 }
 .icon-search:before {
   content: "\e986";
-  font-size: 2em;
+  font-size: 36px;
   margin-left: -28px;
 }
 .mui-text-field {
   padding-right: 35px;
-  width: 40%;
 }
 body {
   background-color: #00BDD6;
-  color: #fff;
   font-family: 'robotoregular', sans-serif;
   height: 100%;
 }
@@ -2739,13 +2729,9 @@ body {
 .page_inner {
   height: auto;
   min-height: 100%;
-}
-.header h1 {
-  color: #fff;
-  opacity: 1;
-}
-.mui-text-field .mui-text-field-input {
-  color: #fff;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
 .h_enter {
   text-transform: none;
@@ -2753,7 +2739,7 @@ body {
   min-width: auto;
   background: none;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   margin: 0 18px;
   display: inline-block;
@@ -2783,10 +2769,6 @@ body {
   opacity: 1;
   transform: translateY(0px);
 }
-.mui-text-field .mui-text-field-input,
-.mui-text-field .mui-text-field-textarea {
-  font-size: 2rem;
-}
 .footer {
   background: #0097A7;
   height: 60px;
@@ -2796,11 +2778,39 @@ body {
 .search-field {
   margin-top: 150px;
 }
-.mui-text-field .mui-text-field-underline,
-.mui-text-field .mui-text-field-focus-underline {
-  bottom: -2px;
+@media only screen and (max-width: 1200px) {
+  .mui-text-field {
+    width: 600px;
+  }
+  .h_enter {
+    font-size: 16px;
+  }
+  .icon-search:before,
+  .mui-text-field {
+    font-size: 28px;
+  }
 }
-hr {
-  border-color: -moz-use-text-color -moz-use-text-color #ffffff;
-  border-width: medium medium 2px;
+@media only screen and (max-width: 992px) {
+  .mui-text-field {
+    width: 400px;
+  }
+  .icon-search:before,
+  .mui-text-field {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mui-text-field {
+    width: 60%;
+    height: 45px;
+  }
+  .icon-search:before,
+  .mui-text-field {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .mui-text-field {
+    width: 90%;
+  }
 }

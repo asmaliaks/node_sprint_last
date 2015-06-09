@@ -10,9 +10,9 @@ var Header = React.createClass({
       <div className="header clearfix">
 
         <div className="registration-field align-right">
-            <span  className="h_enter">Login</span>
+            <span  className="h_enter">Sign up</span>
              <span className="separator"></span>
-             <span  className="h_enter">Sign up</span>
+             <span  className="h_enter">Sign in</span>
         </div>
 
 
