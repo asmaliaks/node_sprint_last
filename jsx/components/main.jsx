@@ -1,5 +1,4 @@
 var React = require('react');
-var LoginForm = require('./LoginForm.js');
 
 var Main = React.createClass({
 
@@ -7,7 +6,7 @@ var Main = React.createClass({
     return (
 
       <div className="main">
-      	<LoginForm/>
+
       </div>
     );
   }
