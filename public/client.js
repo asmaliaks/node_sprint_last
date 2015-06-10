@@ -1,4 +1,16 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var React = require('react'),
+
+// This is our React component, shared by server and browser thanks to browserify 
+app = React.createFactory(require('./app.js'))
+ 
+// This script will run in the browser and will render our component using the 
+// value from APP_PROPS that we generate inline in the page's html on the server. 
+// If these props match what is used in the server render, React will see that 
+// it doesn't need to generate any DOM and the page will load faster 
+ 
+React.render(app(window.APP_PROPS), document.getElementById('app'));
+},{"./app.js":2,"react":249}],2:[function(require,module,exports){
 var React = require('react');
 var Page = require('./components/page.js');
 // App
@@ -14,19 +26,7 @@ var app = React.createClass({displayName: "app",
 
 module.exports = app;
 
-},{"./components/page.js":6,"react":249}],2:[function(require,module,exports){
-var React = require('react'),
-
-// This is our React component, shared by server and browser thanks to browserify 
-app = React.createFactory(require('./app.js'))
- 
-// This script will run in the browser and will render our component using the 
-// value from APP_PROPS that we generate inline in the page's html on the server. 
-// If these props match what is used in the server render, React will see that 
-// it doesn't need to generate any DOM and the page will load faster 
- 
-React.render(app(window.APP_PROPS), document.getElementById('app'));
-},{"./app.js":1,"react":249}],3:[function(require,module,exports){
+},{"./components/page.js":6,"react":249}],3:[function(require,module,exports){
 var React = require('react');
 
 var Footer = React.createClass({displayName: "Footer",
@@ -106,9 +106,11 @@ var Page = React.createClass({displayName: "Page",
     return (
       React.createElement("div", {className: "example-page"}, 
 
+        React.createElement("div", {className: "page"}, 
         React.createElement("div", {className: "page_inner"}, 
         React.createElement(Header, null), 
         React.createElement(Main, null)
+        )
         ), 
         React.createElement(Footer, null)
 
@@ -27978,4 +27980,4 @@ module.exports = warning;
 },{"./emptyFunction":206,"_process":7}],249:[function(require,module,exports){
 module.exports = require('./lib/React');
 
-},{"./lib/React":107}]},{},[2]);
+},{"./lib/React":107}]},{},[1]);

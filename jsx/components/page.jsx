@@ -12,14 +12,15 @@ var Page = React.createClass({
     return (
       <div className="example-page">
 
+        <div className="page">
         <div className="page_inner">
         <Header />
         <Main />
         </div>
         </div>
         <Footer />
-
-
+        
+      </div>
     );
   },
 

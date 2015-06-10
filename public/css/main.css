@@ -2642,7 +2642,7 @@ hr {
 .example-page {
   text-align: center;
   padding-top: 22px;
-  margin: auto;
+  background-color: #00BDD6;
 }
 .align-right {
   text-align: right;
@@ -2709,7 +2709,6 @@ hr {
   padding-right: 35px;
 }
 body {
-  background-color: #00BDD6;
   font-family: 'robotoregular', sans-serif;
   height: 100%;
 }
@@ -2724,14 +2723,13 @@ body {
 .main {
   max-width: 1500px;
   margin: auto;
-  padding-bottom: 60px;
 }
 .page_inner {
   height: auto;
   min-height: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 20px 60px 20px;
 }
 .h_enter {
   text-transform: none;
