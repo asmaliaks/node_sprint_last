@@ -16,9 +16,10 @@ var Page = React.createClass({
         <Header />
         <Main />
         </div>
+        </div>
         <Footer />
 
-      </div>
+
     );
   },
 
