@@ -35,9 +35,10 @@ server.get('/', function (req, res, next) {
 					</body>\
 				</html>';
 	
-	// Send response
-	res.writeHead({
-		'Content-Type': 'text/html'
+	// Send response	
+	res.writeHead(200, {
+	    'Content-Length': Buffer.byteLength(body),
+	    'Content-Type': 'text/html; charset=utf-8'
 	});
 	res.write(body);
 	res.end();
