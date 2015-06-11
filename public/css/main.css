@@ -2678,6 +2678,7 @@ hr {
 .mui-text-field {
   height: 60px;
   width: 800px;
+  font-size: 36px;
 }
 .mui-text-field .mui-text-field-hint {
   color: #ffffff;
@@ -2686,7 +2687,7 @@ hr {
 .mui-text-field .mui-text-field-focus-underline {
   -webkit-transform: scaleX(0);
 }
-.mui-text-field .mui-is-focused .mui-text-field-focus-underline {
+.mui-text-field.mui-is-focused .mui-text-field-focus-underline {
   -webkit-transform: scaleX(1);
 }
 .example-page {
