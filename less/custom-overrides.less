@@ -1,2 +1,29 @@
 //Override Variables in scaffolding.less
-/*@accent-1-color: @orange-A200;*/
+
+@import "../node_modules/material-ui/src/less/mixins/transitions.less";
+@import "../node_modules/material-ui/src/less/components/input.less";
+@import "../node_modules/material-ui/src/less/variables/custom-variables.less";
+@import "../node_modules/material-ui/src/less/components/text-field.less";
+@import "../node_modules/material-ui/src/less/core/base.less";
+
+//styles
+
+.ease-out(@duration: 450ms; @property: all; @delay: 0ms) {
+  transition: @property @duration @ease-out-function @delay;
+  -webkit-transition: @property @duration @ease-out-function @delay;
+}
+@body-text-color: @white;
+@primary-1-color: @white;
+
+.mui-text-field-focus-underline {
+  border-bottom-width: 2px;
+}
+.mui-text-field {
+  width: 800px;
+  @disabled-text-color: @white;
+//  @disabled-text-color: fade(@body-text-color, 1);
+}
+
+hr {
+//  border-bottom: solid 2px @body-text-color;
+}
