@@ -10,7 +10,6 @@
 //styles
 
 .ease-out(@duration: 450ms; @property: all; @delay: 0ms) {
-  transition: @property @duration @ease-out-function @delay;
   -webkit-transition: @property @duration @ease-out-function @delay;
 }
 @body-text-color: @white;
@@ -28,6 +27,14 @@
   color: @white;
   font-size: 36px;
 }
+.mui-text-field .mui-text-field-focus-underline {
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+}
+.mui-text-field .mui-is-focused .mui-text-field-focus-underline {
+ transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  }
 hr {
 //  border-color: @body-text-color;
 }
