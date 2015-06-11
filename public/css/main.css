@@ -2678,6 +2678,9 @@ hr {
 .mui-text-field {
   width: 800px;
 }
+.mui-text-field .mui-text-field-hint {
+  color: #ffffff;
+}
 .example-page {
   text-align: center;
   padding-top: 22px;
