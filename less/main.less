@@ -140,7 +140,9 @@ body{
   position: absolute;
   top: 100%;
   transform: translateY(10px);
+  -webkit-transform: translateY(10px);
   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  -webkit-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
   width: 100%;
   box-sizing: border-box;
 }
@@ -148,6 +150,7 @@ body{
 .h_enter:focus:after {
   opacity: 1;
   transform: translateY(0px);
+  -webkit-transform: translateY(0px);
 }
 .footer{
   background: #0097A7;
@@ -194,4 +197,3 @@ body{
     width: 90%;
   }
 }
-

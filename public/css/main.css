@@ -2675,9 +2675,6 @@ hr {
   border: none;
   border-bottom: solid 1px #e0e0e0;
 }
-.mui-text-field-focus-underline {
-  border-bottom-width: 2px;
-}
 .mui-text-field {
   width: 800px;
 }
@@ -2801,7 +2798,9 @@ body {
   position: absolute;
   top: 100%;
   transform: translateY(10px);
+  -webkit-transform: translateY(10px);
   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  -webkit-transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
   width: 100%;
   box-sizing: border-box;
 }
@@ -2809,6 +2808,7 @@ body {
 .h_enter:focus:after {
   opacity: 1;
   transform: translateY(0px);
+  -webkit-transform: translateY(0px);
 }
 .footer {
   background: #0097A7;
@@ -2819,7 +2819,7 @@ body {
 .search-field {
   margin-top: 150px;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .mui-text-field {
     width: 600px;
   }
@@ -2831,7 +2831,7 @@ body {
     font-size: 28px;
   }
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 992px) {
   .mui-text-field {
     width: 400px;
   }
@@ -2840,7 +2840,7 @@ body {
     font-size: 24px;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .mui-text-field {
     width: 60%;
     height: 45px;
@@ -2850,7 +2850,7 @@ body {
     font-size: 18px;
   }
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (max-width: 375px) {
   .mui-text-field {
     width: 90%;
   }

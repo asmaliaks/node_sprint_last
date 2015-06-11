@@ -5,6 +5,7 @@
 @import "../node_modules/material-ui/src/less/variables/custom-variables.less";
 @import "../node_modules/material-ui/src/less/components/text-field.less";
 @import "../node_modules/material-ui/src/less/core/base.less";
+@import "../node_modules/material-ui/src/less/variables/media-queries.less";
 
 //styles
 
@@ -16,7 +17,7 @@
 @primary-1-color: @white;
 
 .mui-text-field-focus-underline {
-  border-bottom-width: 2px;
+//  border-bottom-width: 2px;
 }
 .mui-text-field {
   width: 800px;
@@ -25,5 +26,9 @@
 }
 
 hr {
-//  border-bottom: solid 2px @body-text-color;
+//  border-color: @body-text-color;
 }
+@device-x-large: ~"only screen and (max-width: 1200px)";
+@device-large:   ~"only screen and (max-width: 992px)";
+@device-medium:  ~"only screen and (max-width: 768px)";
+@device-small:   ~"only screen and (max-width: 375px)";
