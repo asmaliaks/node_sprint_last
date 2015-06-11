@@ -2676,6 +2676,7 @@ hr {
   border-bottom: solid 1px #e0e0e0;
 }
 .mui-text-field {
+  height: 60px;
   width: 800px;
 }
 .mui-text-field .mui-text-field-hint {
@@ -2683,11 +2684,9 @@ hr {
   font-size: 36px;
 }
 .mui-text-field .mui-text-field-focus-underline {
-  transform: scaleX(0);
   -webkit-transform: scaleX(0);
 }
 .mui-text-field .mui-is-focused .mui-text-field-focus-underline {
-  transform: scaleX(1);
   -webkit-transform: scaleX(1);
 }
 .example-page {
@@ -2855,7 +2854,7 @@ body {
 @media only screen and (max-width: 768px) {
   .mui-text-field {
     width: 60%;
-    height: 45px;
+    height: 50px;
   }
   .icon-search:before,
   .mui-text-field {
