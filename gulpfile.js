@@ -1,3 +1,6 @@
+
+"use strict";
+
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
@@ -8,6 +11,10 @@ var rename = require('gulp-rename');
 var react = require('gulp-react');
 var minifyCss = require('gulp-minify-css');
 var rename = require("gulp-rename");
+var autoprefixer = require('gulp-autoprefixer');
+var livereload = require('gulp-livereload');
+var connect = require('gulp-connect');
+var uncss = require('gulp-uncss');
 
 gulp.task('default', function () {
 
@@ -60,9 +67,14 @@ gulp.task('less', function () {
         .pipe(less({
         paths: [path.join(__dirname, 'less', 'includes')]
     }))
+        .pipe(autoprefixer({
+            browsers: ['> 1%', 'last 2 versions', 'ie 9'],
+            cascade: false
+        }))
         .pipe(minifyCss())
         .pipe(rename("main.min.css"))
-        .pipe(gulp.dest('./public/css/'));
+        .pipe(gulp.dest('./public/css/'))
+        .pipe(connect.reload());
 }); 
 
 gulp.task('state', function () {
@@ -74,10 +86,30 @@ gulp.task('state', function () {
         .pipe(gulp.dest('./test/state/'));   
 });
 
+gulp.task('connect', function() {
+  connect.server({
+    root: 'public',
+    livereload: true
+  });
+});
+
+gulp.task('html', function () {
+  gulp.src('./public/index.html')
+    .pipe(connect.reload());
+});
+
+gulp.task('uncss', function() {
+    return gulp.src('./public/css/main.min.css')
+        .pipe(uncss({
+            html: ['./public/index.html']
+        }))
+        .pipe(gulp.dest('./public/css/'));
+});
+
 gulp.task('watch', function () {
 
     // Run both tasks on first run
-    gulp.run('react1', 'react2','app','less');
+    gulp.run('react1', 'react2','app','less','html','connect');
 
     // Watch the jsx components_jsx folder for changes
     gulp.watch('./jsx/components/*.jsx', function () {
@@ -101,6 +133,11 @@ gulp.task('watch', function () {
     gulp.watch('./less/main.less', function () {
         // Run the app task
         gulp.run('less');
+    }); 
+
+    gulp.watch('./public/index.html', function () {
+        // Run the app task
+        gulp.run('html');
     }); 
 
 });
