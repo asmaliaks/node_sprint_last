@@ -6,6 +6,8 @@ var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var rename = require('gulp-rename');
 var react = require('gulp-react');
+var minifyCss = require('gulp-minify-css');
+var rename = require("gulp-rename");
 
 gulp.task('default', function () {
 
@@ -58,6 +60,8 @@ gulp.task('less', function () {
         .pipe(less({
         paths: [path.join(__dirname, 'less', 'includes')]
     }))
+        .pipe(minifyCss())
+        .pipe(rename("main.min.css"))
         .pipe(gulp.dest('./public/css/'));
 }); 
 

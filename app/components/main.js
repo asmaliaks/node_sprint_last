@@ -6,7 +6,6 @@ var Main = React.createClass({displayName: "Main",
     return (
 
       React.createElement("div", {className: "main"}
-
       )
     );
   }
