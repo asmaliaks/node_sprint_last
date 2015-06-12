@@ -31,7 +31,7 @@ server.get('/', function (req, res, next) {
 					<body>\
 						<div id="app">' + content + '</div>\
 						<script>var APP_PROPS = {name: "' + state.name+ '"};</script>\
-						<script src="client.js"></script>\
+						<script src="client.min.js"></script>\
 					</body>\
 				</html>';
 	

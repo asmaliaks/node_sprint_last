@@ -15,6 +15,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var livereload = require('gulp-livereload');
 var connect = require('gulp-connect');
 var uncss = require('gulp-uncss');
+var uglify = require('gulp-uglify');
 
 gulp.task('default', function () {
 
@@ -142,7 +143,12 @@ gulp.task('watch', function () {
 
 });
 
-
+gulp.task('uglify', function() {
+  return gulp.src('./public/client.js')
+    .pipe(uglify())
+    .pipe(rename("client.min.js"))
+    .pipe(gulp.dest('./public/'));
+});
 
 gulp.task('default', ['watch']);
 
