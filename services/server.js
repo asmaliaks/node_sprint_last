@@ -26,7 +26,7 @@ server.get('/', function (req, res, next) {
 				<html lang="">\
 				<head>\
 				<meta content="width=device-width" name="viewport">\
-				<link rel="stylesheet" type="text/css" href="css/main.css">\
+				<link rel="stylesheet" type="text/css" href="css/main.min.css">\
 				</head>\
 					<body>\
 						<div id="app">' + content + '</div>\
