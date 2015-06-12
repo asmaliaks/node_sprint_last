@@ -109,7 +109,7 @@ gulp.task('uncss', function() {
 gulp.task('watch', function () {
 
     // Run both tasks on first run
-    gulp.run('react1', 'react2','app','less','html','connect');
+    // gulp.run('react1', 'react2','app','less','html','connect');
 
     // Watch the jsx components_jsx folder for changes
     gulp.watch('./jsx/components/*.jsx', function () {
