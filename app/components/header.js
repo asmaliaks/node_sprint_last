@@ -4,15 +4,25 @@ var React = require('react'),
 
 var Header = React.createClass({displayName: "Header",
 
+  getInitialState: function() {
+    return {liked: false};
+  },
+  handleClick: function(event) {
+    this.setState({liked: !this.state.liked});
+  },
+
+
+
   render: function() {
+    var text = this.state.liked ? "header clearfix login" : "header clearfix";
     return (
 
-      React.createElement("div", {className: "header clearfix"}, 
+      React.createElement("div", {className: text}, 
 
         React.createElement("div", {className: "registration-field align-right"}, 
-            React.createElement("span", {className: "h_enter"}, "Sign up"), 
+            React.createElement("span", {className: "h_enter", onClick: this.handleClick}, "Sign in"), 
              React.createElement("span", {className: "separator"}), 
-             React.createElement("span", {className: "h_enter"}, "Sign in")
+             React.createElement("span", {className: "h_enter"}, "Sign up")
         ), 
 
 

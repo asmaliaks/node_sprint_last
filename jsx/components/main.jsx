@@ -6,7 +6,6 @@ var Main = React.createClass({
     return (
 
       <div className="main">
-
       </div>
     );
   }

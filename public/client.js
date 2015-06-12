@@ -25,7 +25,7 @@ app = React.createFactory(require('./app.js'))
 // If these props match what is used in the server render, React will see that 
 // it doesn't need to generate any DOM and the page will load faster 
  
-React.render(app(window.APP_PROPS), document.getElementById('app'));
+React.render(app(window.APP_PROPS), document.body);
 },{"./app.js":1,"react":249}],3:[function(require,module,exports){
 var React = require('react');
 
@@ -49,15 +49,25 @@ var React = require('react'),
 
 var Header = React.createClass({displayName: "Header",
 
+  getInitialState: function() {
+    return {liked: false};
+  },
+  handleClick: function(event) {
+    this.setState({liked: !this.state.liked});
+  },
+
+
+
   render: function() {
+    var text = this.state.liked ? "header clearfix login" : "header clearfix";
     return (
 
-      React.createElement("div", {className: "header clearfix"}, 
+      React.createElement("div", {className: text}, 
 
         React.createElement("div", {className: "registration-field align-right"}, 
-            React.createElement("span", {className: "h_enter"}, "Sign up"), 
+            React.createElement("span", {className: "h_enter", onClick: this.handleClick}, "Sign in"), 
              React.createElement("span", {className: "separator"}), 
-             React.createElement("span", {className: "h_enter"}, "Sign in")
+             React.createElement("span", {className: "h_enter"}, "Sign up")
         ), 
 
 
@@ -83,7 +93,6 @@ var Main = React.createClass({displayName: "Main",
     return (
 
       React.createElement("div", {className: "main"}
-
       )
     );
   }
@@ -104,17 +113,18 @@ var Page = React.createClass({displayName: "Page",
   render: function() {
 
     return (
-      React.createElement("div", {className: "example-page"}, 
+      React.createElement("div", {id: "app"}, 
+        React.createElement("div", {className: "example-page"}, 
 
-        React.createElement("div", {className: "page"}, 
-        React.createElement("div", {className: "page_inner"}, 
-        React.createElement(Header, null), 
-        React.createElement(Main, null)
-        )
+          React.createElement("div", {className: "page"}, 
+          React.createElement("div", {className: "page_inner"}, 
+          React.createElement(Header, null), 
+          React.createElement(Main, null)
+          )
+          )
         ), 
         React.createElement(Footer, null)
-        
-      )
+      )  
     );
   },
 

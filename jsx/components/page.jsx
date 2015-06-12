@@ -10,17 +10,18 @@ var Page = React.createClass({
   render: function() {
 
     return (
-      <div className="example-page">
+      <div id="app">
+        <div className="example-page">
 
-        <div className="page">
-        <div className="page_inner">
-        <Header />
-        <Main />
-        </div>
+          <div className="page">
+          <div className="page_inner">
+          <Header />
+          <Main />
+          </div>
+          </div>
         </div>
         <Footer />
-        
-      </div>
+      </div>  
     );
   },
 

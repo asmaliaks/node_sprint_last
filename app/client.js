@@ -8,4 +8,4 @@ app = React.createFactory(require('./app.js'))
 // If these props match what is used in the server render, React will see that 
 // it doesn't need to generate any DOM and the page will load faster 
  
-React.render(app(window.APP_PROPS), document.getElementById('app'));
+React.render(app(window.APP_PROPS), document.body);
