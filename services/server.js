@@ -1,21 +1,21 @@
 var restify = require('restify');
 var React = require('react');
-var myservice = require('./service.js');
+// var myservice = require('./service.js');
 var state = {};
 var app = React.createFactory(require('../app/app.js'));
 var server = restify.createServer();
 
 // Rest service
-server.get('/test', function (req, res, next) {
-	res.send(200, JSON(myservice.test()));
-	next();
-});
+// server.get('/test', function (req, res, next) {
+// 	res.send(200, JSON(myservice.test()));
+// 	next();
+// });
 
 // Prepare landing page
 server.get('/', function (req, res, next) {	
 	
 	// Get data
-	var data = myservice.test();
+	// var data = myservice.test();
 	
 	// Set state
 	// state.name = data.name;
