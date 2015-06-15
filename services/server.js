@@ -26,12 +26,12 @@ server.get('/', function (req, res, next) {
 				<html lang="">\
 				<head>\
 				<meta content="width=device-width" name="viewport">\
-				<link rel="stylesheet" type="text/css" href="css/main.min.css">\
+				<link rel="stylesheet" type="text/css" href="css/main.css">\
 				</head>\
 					<body>\
 						<div id="app">' + content + '</div>\
 						<script>var APP_PROPS = {name: "' + state.name+ '"};</script>\
-						<script src="client.min.js"></script>\
+						<script src="client.js"></script>\
 					</body>\
 				</html>';
 	

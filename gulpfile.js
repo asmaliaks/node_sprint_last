@@ -42,15 +42,6 @@ gulp.task('reactify', function () {
       .pipe(gulp.dest('./test/react/'));
 });	
 
-gulp.task('app', function () {
-    return browserify('./app/client.js')
-        .bundle()
-        //Pass desired output filename to vinyl-source-stream
-        .pipe(source('client.js'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest('./public/'));   
-});
-
 gulp.task('react1', function () {
     return gulp.src('./jsx/components/*.jsx')
         .pipe(react())
@@ -62,21 +53,6 @@ gulp.task('react2', function () {
         .pipe(react())
         .pipe(gulp.dest('./app/'));
 });
-
-gulp.task('less', function () {
-    return gulp.src('./less/main.less')
-        .pipe(less({
-        paths: [path.join(__dirname, 'less', 'includes')]
-    }))
-        .pipe(autoprefixer({
-            browsers: ['> 1%', 'last 2 versions', 'ie 9'],
-            cascade: false
-        }))
-        .pipe(minifyCss())
-        .pipe(rename("main.min.css"))
-        .pipe(gulp.dest('./public/css/'))
-        .pipe(connect.reload());
-}); 
 
 gulp.task('state', function () {
     return browserify('./test/state/app.js')
@@ -99,12 +75,36 @@ gulp.task('html', function () {
     .pipe(connect.reload());
 });
 
-gulp.task('uncss', function() {
-    return gulp.src('./public/css/main.min.css')
-        .pipe(uncss({
-            html: ['./public/index.html']
+// gulp.task('uncss', function() {
+//     return gulp.src('./public/css/main.min.css')
+//         .pipe(uncss({
+//             html: ['./public/index.html']
+//         }))
+//         .pipe(gulp.dest('./public/css/'));
+// });
+
+gulp.task('less', function () {
+    return gulp.src('./less/main.less')
+        .pipe(less({
+        paths: [path.join(__dirname, 'less', 'includes')]
+    }))
+        .pipe(autoprefixer({
+            browsers: ['> 1%', 'last 2 versions', 'ie 9'],
+            cascade: false
         }))
-        .pipe(gulp.dest('./public/css/'));
+        // .pipe(minifyCss())
+        // .pipe(rename("main.min.css"))
+        .pipe(gulp.dest('./public/css/'))
+        .pipe(connect.reload());
+}); 
+
+gulp.task('app', function () {
+    return browserify('./app/client.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('client.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./public/'));   
 });
 
 gulp.task('watch', function () {
@@ -143,12 +143,12 @@ gulp.task('watch', function () {
 
 });
 
-gulp.task('uglify', function() {
-  return gulp.src('./public/client.js')
-    .pipe(uglify())
-    .pipe(rename("client.min.js"))
-    .pipe(gulp.dest('./public/'));
-});
+// gulp.task('uglify', function() {
+//   return gulp.src('./public/client.js')
+//     .pipe(uglify())
+//     .pipe(rename("client.min.js"))
+//     .pipe(gulp.dest('./public/'));
+// });
 
 gulp.task('default', ['watch']);
 
