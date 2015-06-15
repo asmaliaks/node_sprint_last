@@ -18,7 +18,7 @@ server.get('/', function (req, res, next) {
 	var data = myservice.test();
 	
 	// Set state
-	state.name = data.name;
+	// state.name = data.name;
 	
 	// Prepare content
 	var content = React.renderToString(new app(state));
@@ -30,7 +30,7 @@ server.get('/', function (req, res, next) {
 				</head>\
 					<body>\
 						<div id="app">' + content + '</div>\
-						<script>var APP_PROPS = {name: "' + state.name+ '"};</script>\
+						<script>var APP_PROPS = ' + JSON.stringify(state) + ';</script>\
 						<script src="client.js"></script>\
 					</body>\
 				</html>';
