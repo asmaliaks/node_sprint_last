@@ -50,6 +50,6 @@ server.get('/.*', restify.serveStatic({
 }));
 
 // Run server
-server.listen(80, function () {
+server.listen(82, function () {
 	console.log('%s listening at %s', server.name, server.url);
 });
