@@ -2896,6 +2896,9 @@ body,
   font-family: 'robotoregular', sans-serif;
   height: 100%;
 }
+#app {
+  position: relative;
+}
 .page,
 .example-page {
   height: auto;
@@ -2962,7 +2965,13 @@ body,
   margin-top: -60px;
 }
 .search-field {
+  height: 60px;
+  left: 0;
+  margin: -30px 0 0;
   padding-top: 130px;
+  position: absolute;
+  right: 0;
+  top: 50%;
 }
 @media only screen and (max-width: 1200px) {
   .mui-text-field {
