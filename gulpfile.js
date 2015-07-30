@@ -119,7 +119,7 @@ gulp.task('watch', function () {
     });
 
     // Watch the jsx app for changes
-    gulp.watch('./jsx/*.jsx', function () {
+    gulp.watch('./jsx/!*.jsx', function () {
         // Run the js task
         gulp.run('react2','app');
     });
@@ -150,5 +150,5 @@ gulp.task('watch', function () {
 //     .pipe(gulp.dest('./public/'));
 // });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['app']);
 
