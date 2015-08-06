@@ -8,42 +8,35 @@ var server = restify.createServer();
 var MongoClient = require('mongodb').MongoClient
 	, assert = require('assert');
 
-// Rest service
-// server.get('/test', function (req, res, next) {
-// 	res.send(200, JSON(myservice.test()));
-// 	next();
-// });
 server.use(restify.bodyParser());
 server.post('/auth', function(req, res) {
-	//var findUsers = function(db, callback, login, pass) {
-	//	// Get the documents collection
-	//	var collection = db.collection('users');
-	//	// Find some documents
-	//	collection.find({login: 'alex'}).toArray(function(err, usrs) {
-	//		assert.equal(err, null);console.log(usrs);
-	//		assert.equal(3, usrs.length);
-	//		console.log("Found the following records"+usrs);
-	//		console.dir(usrs);
-	//		callback(usrs);
-	//	});
-    //
-	//};
 	var jsonBody = JSON.parse(req.body);
-	console.log(jsonBody);
+	var findUsers = function(db, login, pass, callback) {
+		// Get the documents collection
+		var collection = db.collection('users');
+
+		// Find some documents
+		var results = collection.find({login: login, pass: pass}).toArray(function(err, users) {
+			assert.equal(err, null);
+			callback(users);
+		});
+
+	};
 //// Connection URL
-//	var url = 'mongodb://localhost:27017/catalog';
-//// Use connect method to connect to the Server
-//	MongoClient.connect(url, function(err, db) {
-//		assert.equal(null, err);
-//		var collection = db.collection('users');
-//		findUsers(db, function(users) {
-//
-//			db.close();
-//		}, jsonBody.login, jsonBody.pass);
-//	});
+	var url = 'mongodb://localhost:27017/sprint2';
+// Use connect method to connect to the Server
+	MongoClient.connect(url, function(err, db) {
+		assert.equal(null, err);
+		//var collection = db.collection('users');
+		findUsers(db, jsonBody.login, jsonBody.pass,
+			function(users) {
+				res.send(users);
+				db.close();
+		});
+	});
 
 
-	res.send(jsonBody);
+
 
 });
 // Prepare landing page
@@ -85,6 +78,6 @@ server.get('/.*', restify.serveStatic({
 }));
 
 // Run server
-server.listen(8000, function () {
+server.listen(8080, function () {
 	console.log('%s listening at %s', server.name, server.url);
 });

@@ -30,10 +30,14 @@
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "asmalouski",
   "license": "MIT",
   "dependencies": {
     "material-ui": "^0.7.0",
     "react": "^0.13.3"
+  },
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "directories": {
+    "test": "test"
   }
 }

@@ -9,6 +9,7 @@ var Main = React.createClass({displayName: "Main",
     var self = this,  initialView = 'main';
 
     // Routes
+
     router.on('home', function(hash) {
       self.setState({currentView: hash});
     });
