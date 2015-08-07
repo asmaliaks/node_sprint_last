@@ -199,16 +199,22 @@ var Signin = React.createClass({displayName: "Signin",
 
 
         xhr.open("POST", '/auth', true);
-        //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
         xhr.send(body);
-        xhr.onreadystatechange = function(){
-            var response = xhr.responseText;console.log(response);
-            //if(!response){
-            //    console.log('invalid credentials');
-            //}else{
-            //    console.log('ok gugal');
-            //}
+
+        xhr.onloadend = function(){
+            if(xhr.status == 200){
+                var response = xhr.responseText;
+                if(response != '[]'){
+                    response = JSON.parse(response);
+                    console.log(response[0]);
+                }else{
+                    console.log("no users found");
+                }
+
+            }
+
         };
 
     },

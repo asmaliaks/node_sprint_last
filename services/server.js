@@ -9,22 +9,25 @@ var MongoClient = require('mongodb').MongoClient
 	, assert = require('assert');
 
 server.use(restify.bodyParser());
-server.post('/auth', function(req, res) {
+
+server.post('/auth', function create(req, res, next) {
+
 	var jsonBody = JSON.parse(req.body);
+
 	var findUsers = function(db, login, pass, callback) {
 		// Get the documents collection
 		var collection = db.collection('users');
 
 		// Find some documents
-		var results = collection.find({login: login, pass: pass}).toArray(function(err, users) {
+		collection.find({login: login, pass: pass}).toArray(function(err, users) {
 			assert.equal(err, null);
 			callback(users);
 		});
 
 	};
-//// Connection URL
+	//// Connection URL
 	var url = 'mongodb://localhost:27017/sprint2';
-// Use connect method to connect to the Server
+	// Use connect method to connect to the Server
 	MongoClient.connect(url, function(err, db) {
 		assert.equal(null, err);
 		//var collection = db.collection('users');
@@ -34,9 +37,6 @@ server.post('/auth', function(req, res) {
 				db.close();
 		});
 	});
-
-
-
 
 });
 // Prepare landing page
